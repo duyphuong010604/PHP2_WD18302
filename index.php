@@ -7,11 +7,14 @@ use Php2\Oop\Model\BaseModel;
 use Php2\Oop\Controller\BaseController;
 
 $name = new Database("hehehe");
-
 $basemodel = new BaseModel();
-
-var_dump($basemodel);
-
 $basecontroller = new BaseController();
 
+
+echo $name->__construct("Vo Duy Phuong");
+echo "<br/>";
+var_dump($basemodel);
+echo $basemodel->get_name();
+echo "<br/>";
 var_dump($basecontroller);
+echo $basecontroller->get_controller();
