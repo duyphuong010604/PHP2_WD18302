@@ -2,50 +2,97 @@
 
 require_once "vendor/autoload.php";
 
-use Php2\Oop\Model\Database;
+use Php2\Oop\Core\Filed;
+use Php2\Oop\Core\Form;
 use Php2\Oop\Model\BaseModel;
-use Php2\Oop\Controller\BaseController;
-use Php2\Oop\Model\Nhanvien;
-use Php2\Oop\Core\Base;
-use Php2\Oop\Core\ConBase;
 
-$ConBase = new ConBase();
-$name = new Database("hehehe");
-$basemodel = new BaseModel();
-$basecontroller = new BaseController();
-$nhanvien = new Nhanvien();
-$Base = new Base();
+$baseModel = new BaseModel();
+?>
+<!doctype html>
+<html lang="en">
 
-echo $name->__construct("Vo Duy Phuong");
-echo "<br/>";
-var_dump($basemodel);
-echo $basemodel->get_name();
-echo "<br/>";
-var_dump($basecontroller);
-echo $basecontroller->get_controller();
+<head>
+    <title>Lab3_VoDuyPhuong</title>
+    </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-echo "<br/> Buoi 5 ne!";
-echo $basemodel->get_name();
-echo $nhanvien->get_name();
-echo $nhanvien->set_name("Phi Hao");
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
 
-echo "Sai static: " . $basemodel->get_idNhanvien();
+<body>
+    <div class="container">
+        <h1>Tạo mới tài khoản.</h1>
+        <?php
+        $form = Form::begin(" ", "post");
+        ?>
+        <div class="row">
+            <div class="col">
+                <?php echo $form->filed('firstname'); ?>
+            </div>
+            <div class="col">
+                <?php echo $form->filed('lastname'); ?>
+            </div>
+        </div>
+        <?php
+        echo $form->filed("email");
+        ?>
+        <?php
+        echo $form->filed("password")->passwordFiled();
+        ?>
+        <?php
+        echo $form->filed("confirm")->passwordFiled();
+        ?>
+        <button type="submit" class="btn btn-primary">
+            Gửi
+        </button>
+        <?php echo Form::end(); ?>
+        <div class="row">
+            <div class="col">
+                <h1>Bài Tập Thêm</h1>
+            </div>
+            <div class="row">
+                <h3>Gọi tất cả các phương thức</h3>
+                <div class="col">
+                    <?php
+                    echo $baseModel->get_info();
+                    ?>
+                    <?php
+                    echo "<br/>";
+                    echo $baseModel->get_all();
+                    ?>
+                    <?php
+                    echo "<br/>";
+                    echo $baseModel->get_list(12);
+                    ?>
+                    <?php
+                    echo "<br/>";
+                    echo $baseModel->update(12);
+                    ?>
+                    <?php
+                    echo "<br/>";
+                    echo $baseModel->delete(12);
+                    ?>
+                    <?php
+                    echo "<br/>";
+                    echo $baseModel->insert("Phi Hao", 19);
+                    ?>
+                </div>
+            </div>
+        </div>
 
-echo $basemodel::URL;
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
 
-echo $nhanvien::URL;
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
 
-
-echo $nhanvien->get_idNhanvien();
-
-echo "<br/> ---------Buoi 6 ne!---------<br/> ";
-var_dump($Base);
-echo $Base->get_name();
-echo $Base::Pi;
-echo $Base::$_Apolo;
-echo $Base->get_Apollo();
-echo $Base->set_name("Phi Hao");
-
-
-echo $ConBase::$_Apolo;
-
+</html>

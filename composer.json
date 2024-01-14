@@ -1,0 +1,16 @@
+{
+    "name": "php2/oop",
+    "description": "lab3",
+    "autoload": {
+        "psr-4": {
+            "Php2\\Oop\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "duyphuong010604",
+            "email": "voduyphuong13@gmail.com"
+        }
+    ],
+    "require": {}
+}
