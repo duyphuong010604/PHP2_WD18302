@@ -1,0 +1,16 @@
+{
+    "name": "app/app",
+    "description": "router",
+    "autoload": {
+        "psr-4": {
+            "App\\App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "duyphuong010604",
+            "email": "voduyphuong13@gmail.com"
+        }
+    ],
+    "require": {}
+}
