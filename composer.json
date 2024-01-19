@@ -3,7 +3,7 @@
     "description": "Asm Php",
     "autoload": {
         "psr-4": {
-            "Php2\\Oop\\": "src/"
+            "Php2\\Oop\\": "App/"
         }
     },
     "authors": [
