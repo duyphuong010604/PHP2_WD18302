@@ -20,21 +20,19 @@ class Route
         $this->renderController();
         $this->renderMethod();
     }
+
     function request()
     {
-
         $this->url = isset($_GET['url']) ? $_GET['url'] : null;
-
-        // filter_var trong php là gì?
 
         if ($this->url != null) {
             $this->url = rtrim($this->url, '/');
             $this->url = explode('/', filter_var($this->url, FILTER_SANITIZE_URL));
+
         } else {
             unset($this->url);
         }
     }
-
     function renderController()
     {
         if (!isset($this->url[0])) {
@@ -42,7 +40,8 @@ class Route
             $className = preg_replace("~\/~", "\\", $className);
             $this->controller = new $className;
             $this->controller->HomeController();
-        } else {
+        }
+        else {
             $this->nameController = $this->url[0];
             $file = __DIR__ . '/../Controllers/' . $this->nameController . '.php';
 

@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Controllers;
-
-class HomeController{
+use App\Controllers\BaseController;
+class HomeController
+{
 
     function HomeController()
     {
@@ -11,7 +12,7 @@ class HomeController{
 
     function homePage()
     {
-        echo "HIhi";
+
     }
 
     function detail($id) {
