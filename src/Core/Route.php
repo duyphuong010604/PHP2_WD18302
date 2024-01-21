@@ -8,10 +8,7 @@ class Route
 {
     protected array $routes;
 
-    public function __construct()
-    {
 
-    }
     public function resolve(string $requesUrl)
     {
 
