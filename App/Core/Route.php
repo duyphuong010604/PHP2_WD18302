@@ -20,8 +20,6 @@ class Route
 
         $this->url = isset($_GET['url']) ? $_GET['url'] : null;
 
-        // filter_var trong php là gì?
-
         if ($this->url != null) {
             $this->url = rtrim($this->url, '/');
             $this->url = explode('/', filter_var($this->url, FILTER_SANITIZE_URL));
@@ -33,25 +31,25 @@ class Route
     function renderController()
     {
         if (!isset($this->url[0])) {
-            $className        = $this->path . $this->nameController;
-            $className        = preg_replace("~\/~", "\\", $className);
+            $className = $this->path . $this->nameController;
+            $className = preg_replace("~\/~", "\\", $className);
             $this->controller = new $className;
             $this->controller->HomeController();
         } else {
             $this->nameController = $this->url[0];
-            $file                 = __DIR__. '/../Controllers/'. $this->nameController . '.php';
+            $file = __DIR__ . '/../Controllers/' . $this->nameController . '.php';
 
             if (file_exists($file)) {
                 require_once $file;
-                $className        = $this->path . $this->nameController;
-                $className        = preg_replace("~\/~", "\\", $className);
+                $className = $this->path . $this->nameController;
+                $className = preg_replace("~\/~", "\\", $className);
                 if (class_exists($className)) {
                     $this->controller = new $className;
                 } else {
                     header('Location:' . ROOT_URL . 'HomeController/Error');
                 }
             } else {
-           
+
                 header('Location:' . ROOT_URL . 'HomeController/Error');
             }
         }
