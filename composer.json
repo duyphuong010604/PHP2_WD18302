@@ -1,9 +1,8 @@
 {
-    "name": "php2/oop",
-    "description": "Asm Php",
+    "name": "app/app",
     "autoload": {
         "psr-4": {
-            "Php2\\Oop\\": "App/"
+            "App\\": "App/"
         }
     },
     "authors": [
