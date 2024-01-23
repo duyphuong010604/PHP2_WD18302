@@ -29,24 +29,20 @@ class HomeController extends BaseController
     {
         // dữ liệu ở đây lấy từ responsitories hoặc model
         $data = [
-            "moi" => [
-                [
-                    "hehe" => "âsasasasa",
-                ]
-            ]
+
         ];
 
 
         $this->_renderBase->renderHeader();
-        $this->load->render('layouts/client/slider');
-        $this->load->render('layouts/client/moi');
-        $this->load->render('layouts/client/home_product', $data);
+        $this->load->render('layouts/client/home');
+
         $this->_renderBase->renderFooter();
 
     }
 
     function detail($id)
-    {        // dữ liệu ở đây lấy từ responsitories hoặc model
+    {
+        // dữ liệu ở đây lấy từ responsitories hoặc model
 
     }
 

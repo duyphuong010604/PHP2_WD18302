@@ -49,7 +49,6 @@ class Route
                     header('Location:' . ROOT_URL . 'HomeController/Error');
                 }
             } else {
-
                 header('Location:' . ROOT_URL . 'HomeController/Error');
             }
         }
