@@ -63,14 +63,15 @@
                     <li><a href="/home" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Trang
                                 chủ</span></a>
                     </li>
-                    <li><a href="/shift" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Ca làm</span></a>
+                    <li><a href="" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Ca làm</span></a>
                     </li>
                     <li><a href="#resume" class="nav-link scrollto"><i class="bi bi-check-circle"></i> <span>Chấm
                                 công</span></a>
                     </li>
                     <li><a href="#congviec" class="nav-link scrollto"><i class="bx bx-book-content"></i>
                             <span>Công việc</span></a></li>
-                    <li><a href="Quanlitaikhoan" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Quản lý
+                    <li><a href="?url=Quanlitaikhoan" class="nav-link scrollto"><i class="bx bx-server"></i>
+                            <span>Quản lý
                                 tài
                                 khoản</span></a></li>
                     <li><a href="#contact" class="nav-link scrollto"><i class="bi bi-box-arrow-left"></i> <span>Đăng

@@ -18,22 +18,30 @@ class Quanlitaikhoan extends BaseController
     {
         parent::__construct();
         $this->_renderBase = new RenderBase();
+        $this->Quanlitaikhoan();
     }
 
-    function HomeController()
+    function Quanlitaikhoan()
     {
-        $this->page();
+        $this->homePage();
     }
 
-    function page()
+    function homePage()
     {
         // dữ liệu ở đây lấy từ responsitories hoặc model
         $data = [
         ];
         $this->_renderBase->renderHeader();
-        $this->load->render('layouts/client/moi', $data);
+        $this->load->render('layouts/client/quanlitaikhoan', $data);
         $this->_renderBase->renderFooter();
     }
 
+
+
+    function detail($id)
+    {
+        // dữ liệu ở đây lấy từ responsitories hoặc model
+
+    }
 
 }
