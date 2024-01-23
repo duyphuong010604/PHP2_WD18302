@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Core\RenderBase;
 
-class HomeController extends BaseController
+class Quanlitaikhoan extends BaseController
 {
 
     private $_renderBase;
@@ -22,25 +22,18 @@ class HomeController extends BaseController
 
     function HomeController()
     {
-        $this->homePage();
+        $this->page();
     }
 
-    function homePage()
+    function page()
     {
         // dữ liệu ở đây lấy từ responsitories hoặc model
         $data = [
         ];
         $this->_renderBase->renderHeader();
-        $this->load->render('layouts/client/home', $data);
+        $this->load->render('layouts/client/moi', $data);
         $this->_renderBase->renderFooter();
     }
 
-
-
-    function detail($id)
-    {
-        // dữ liệu ở đây lấy từ responsitories hoặc model
-
-    }
 
 }

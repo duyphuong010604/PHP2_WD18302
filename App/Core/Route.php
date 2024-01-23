@@ -17,7 +17,6 @@ class Route
     }
     function request()
     {
-
         $this->url = isset($_GET['url']) ? $_GET['url'] : null;
 
         if ($this->url != null) {
@@ -30,6 +29,7 @@ class Route
 
     function renderController()
     {
+
         if (!isset($this->url[0])) {
             $className = $this->path . $this->nameController;
             $className = preg_replace("~\/~", "\\", $className);
@@ -38,7 +38,6 @@ class Route
         } else {
             $this->nameController = $this->url[0];
             $file = __DIR__ . '/../Controllers/' . $this->nameController . '.php';
-
             if (file_exists($file)) {
                 require_once $file;
                 $className = $this->path . $this->nameController;
@@ -55,6 +54,7 @@ class Route
     }
     function renderMethod()
     {
+
         if (isset($this->url[2])) {
             $this->nameMethod = $this->url[1];
             // Kiểm tra xem có tồn tại method vừa gán
