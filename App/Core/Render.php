@@ -7,8 +7,9 @@ use Exception;
 
 class Render
 {
-    function __construct(){
-        
+    function __construct()
+    {
+
     }
     /**
      * render là hàm dùng để gọi các trang trong Views
@@ -19,9 +20,10 @@ class Render
      */
     public function render($file, $data = array())
     {
+        
         extract($data);
         require 'App/Views/' . $file . '.php';
-        $viewPath = __DIR__ . '/../Views/' .  $file . '.php';
+        $viewPath = __DIR__ . '/../Views/' . $file . '.php';
 
         // kiểm tra file view có tồn tại không
         if (!file_exists($viewPath)) {
