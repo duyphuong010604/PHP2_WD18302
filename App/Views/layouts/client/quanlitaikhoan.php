@@ -98,7 +98,6 @@
                                     <div class="submitting"></div>
                                 </div>
                             </div>
-
                         </div>
                     </form>
                 </div>
@@ -106,7 +105,7 @@
 
             <div class="container ">
                 <div class="section-title">
-                    <h4>Thay đổi mậ khẩu</h4>
+                    <h4>Thay đổi mật khẩu</h4>
                     <p></p>
                 </div>
                 <form>

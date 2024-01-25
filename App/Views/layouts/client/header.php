@@ -63,14 +63,16 @@
                     <li><a href="/home" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Trang
                                 chủ</span></a>
                     </li>
-                    <li><a href="" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Ca làm</span></a>
+                    <li><a href="/home#calam" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Ca
+                                làm</span></a>
                     </li>
-                    <li><a href="#resume" class="nav-link scrollto"><i class="bi bi-check-circle"></i> <span>Chấm
+                    <li><a href="/home#chamcong" class="nav-link scrollto"><i class="bi bi-check-circle"></i>
+                            <span>Chấm
                                 công</span></a>
                     </li>
-                    <li><a href="#congviec" class="nav-link scrollto"><i class="bx bx-book-content"></i>
+                    <li><a href="/home#congviec" class="nav-link scrollto"><i class="bx bx-book-content"></i>
                             <span>Công việc</span></a></li>
-                    <li><a href="?url=Quanlitaikhoan" class="nav-link scrollto"><i class="bx bx-server"></i>
+                    <li><a href="?url=Thongtincanhan" class="nav-link scrollto"><i class="bx bx-server"></i>
                             <span>Quản lý
                                 tài
                                 khoản</span></a></li>
