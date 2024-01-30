@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Core\RenderBase;
 
-class Thongtincanhan extends BaseController
+class ThongtincanhanController extends BaseController
 {
 
     private $_renderBase;

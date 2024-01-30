@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Core\RenderBase;
 
-class Quanlitaikhoan extends BaseController
+class QuanlitaikhoanController extends BaseController
 {
 
     private $_renderBase;
@@ -35,7 +35,6 @@ class Quanlitaikhoan extends BaseController
         $this->load->render('layouts/client/quanlitaikhoan', $data);
         $this->_renderBase->renderFooter();
     }
-
 
 
     function detail($id)

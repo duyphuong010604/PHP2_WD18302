@@ -5,7 +5,7 @@
                 <h2>Thông tin cá nhân</h2>
                 <h4>
                     <button class="btn btn-primary rounded-pill ">
-                        <a class='text-white' href="?url=Quanlitaikhoan">Thay đổi thông tin</a>
+                        <a class='text-white' href="?url=QuanlitaikhoanController">Thay đổi thông tin</a>
                     </button>
                 </h4>
             </div>

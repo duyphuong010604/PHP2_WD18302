@@ -53,7 +53,6 @@ class Route
     }
     function renderMethod()
     {
-
         if (isset($this->url[2])) {
             $this->nameMethod = $this->url[1];
             // Kiểm tra xem có tồn tại method vừa gán

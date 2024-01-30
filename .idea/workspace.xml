@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="139f7800-e0e9-4880-be7c-a632cdb370cc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/App/Models/BaseModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Models/Database.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Models/employeeModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/Quanlitaikhoan.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/Thongtincanhan.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Core/Route.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Core/Route.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/layouts/client/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/layouts/client/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/layouts/client/quanlitaikhoan.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/layouts/client/quanlitaikhoan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/layouts/client/thongtincanhan.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/layouts/client/thongtincanhan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +83,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev/buoi9&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev/buoi10&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/FPTPolytechnic/LAPTRINH_PHP2/PHP2_WD18302&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -117,6 +127,8 @@
       <workItem from="1705743474575" duration="3450000" />
       <workItem from="1705747241062" duration="6000" />
       <workItem from="1705766180127" duration="336000" />
+      <workItem from="1706178877497" duration="3048000" />
+      <workItem from="1706285274805" duration="9000" />
     </task>
     <servers />
   </component>

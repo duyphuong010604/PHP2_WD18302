@@ -72,7 +72,7 @@
                     </li>
                     <li><a href="/home#congviec" class="nav-link scrollto"><i class="bx bx-book-content"></i>
                             <span>Công việc</span></a></li>
-                    <li><a href="?url=Thongtincanhan" class="nav-link scrollto"><i class="bx bx-server"></i>
+                    <li><a href="?url=ThongtincanhanController" class="nav-link scrollto"><i class="bx bx-server"></i>
                             <span>Quản lý
                                 tài
                                 khoản</span></a></li>
