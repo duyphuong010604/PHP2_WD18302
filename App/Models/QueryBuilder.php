@@ -20,7 +20,6 @@ trait QueryBuilder
     public function table($tableName)
     {
         $this->tableName = $tableName;
-
         return $this;
     }
 
@@ -110,27 +109,36 @@ trait QueryBuilder
         return $this;
     }
 
+
+
     public function insert($data)
     {
-        $tableName    = $this->tableName;
-        $insertStatus = $this->insertData($tableName, $data);
-        return $insertStatus;
+        $tableName = $this->tableName;
+        $insert = $this->insertData($tableName, $data);
+        return $insert;
+    }
+
+    public function insertData($tableName, $data)
+    {
+        $insert = "INSERT INTO " . $tableName . "VALUES" . "(" . $data . ")";
+
+        return $insert;
     }
 
     public function update($data)
     {
-        $whereUpdate  = str_replace('WHERE', '', $this->where);
-        $whereUpdate  = trim($whereUpdate);
-        $tableName    = $this->tableName;
+        $whereUpdate = str_replace('WHERE', '', $this->where);
+        $whereUpdate = trim($whereUpdate);
+        $tableName = $this->tableName;
         $updateStatus = $this->updateData($tableName, $data, $whereUpdate);
         return $updateStatus;
     }
 
     public function delete()
     {
-        $whereDelete  = str_replace('WHERE', '', $this->where);
-        $whereDelete  = trim($whereDelete);
-        $tableName    = $this->tableName;
+        $whereDelete = str_replace('WHERE', '', $this->where);
+        $whereDelete = trim($whereDelete);
+        $tableName = $this->tableName;
         $deleteStatus = $this->deleteData($tableName, $whereDelete);
         return $whereDelete;
     }
@@ -143,7 +151,7 @@ trait QueryBuilder
     public function first()
     {
         $sqlQuery = "SELECT $this->selectField FROM $this->tableName $this->innerJoin $this->leftJoin $this->where $this->groupBy $this->orderBy $this->limit";
-        $query    = $this->query($sqlQuery);
+        $query = $this->query($sqlQuery);
         $this->resetQuery();
         if (!empty($query))
             return $query->fetch(PDO::FETCH_ASSOC);
@@ -154,28 +162,28 @@ trait QueryBuilder
     {
         // echo $this->innerJoin;
         $sqlQuery = "SELECT $this->selectField FROM $this->tableName $this->innerJoin $this->leftJoin $this->where $this->groupBy  $this->orderBy  $this->limit";
-        $query    = $this->query($sqlQuery);
+        $query = $this->query($sqlQuery);
         $this->resetQuery();
         if (!empty($query))
             return $query->fetchAll(PDO::FETCH_ASSOC);
         return false;
     }
 
-  
+
 
 
     public function resetQuery()
     {
         // reset field
-        $this->tableName   = '';
-        $this->where       = '';
-        $this->operator    = '';
+        $this->tableName = '';
+        $this->where = '';
+        $this->operator = '';
         $this->selectField = '*';
-        $this->limit       = '';
-        $this->orderBy     = '';
-        $this->groupBy     = '';
-        $this->innerJoin   = '';
-        $this->insert      = '';
-        $this->leftJoin    = '';
+        $this->limit = '';
+        $this->orderBy = '';
+        $this->groupBy = '';
+        $this->innerJoin = '';
+        $this->insert = '';
+        $this->leftJoin = '';
     }
 }

@@ -37,15 +37,7 @@ class Database
     }
 
 
-    public function mysQli()
-    {
-        $conn = new mysqli(self::$dbHost, self::$dbUser, self::$dbPassword, self::$dbName);
 
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-        return $conn;
-    }
 
     public function query($sql)
     {

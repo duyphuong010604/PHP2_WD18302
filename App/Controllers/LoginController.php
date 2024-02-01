@@ -39,17 +39,11 @@ class LoginController extends BaseController
         if (!$user) {
             // chuyển trang tới /?url=LoginController/loadViewLogin
             // báo lỗi
-
-        }
-
-        //xác thực
-        if (password_verify($_POST['password'], $user['matkhau'])) {
-            // xử lý session
-            $_SESSION['user'] = $user['tendangnhap'];
+            echo "Ko co r";
 
         } else {
-
-
+            echo "Thay user";
+            var_dump($user);
         }
 
 
