@@ -16,40 +16,35 @@ class ResgisterController extends BaseController
     {
         parent::__construct();
         $this->_renderBase = new RenderBase();
-
     }
 
 
-    public function loadViewResgister()
+    public function loadViewRegister()
     {
+
+        if (!empty($_SESSION['user'])) {
+            $this->redirect(ROOT_URL);
+        }
         $this->_renderBase->renderHeader();
-        $this->load->render('layouts/client/pages/resgister');
+        $this->load->render('layouts/client/pages/register');
         $this->_renderBase->renderFooter();
     }
 
-    public function handleLogin()
+
+    public function handleRegister()
     {
         // validation form
         // kiểm tra trước rồi mới new UserModel();
+
         $userModel = new UserModel();
         $user = $userModel->checkUserExist($_POST["email"]);
-        if (!$user) {
-            // chuyển trang tới /?url=LoginController/loadViewLogin
-            // báo lỗi
+
+
+        if ($user) {
 
         }
 
-        //xác thực
-        if (password_verify($_POST['password'], $user['matkhau'])) {
-            // xử lý session
-            $_SESSION['user'] = $user['tendangnhap'];
-
-        } else {
-
-
-        }
-
-
+        $userModel->registerUser($_POST);
 
     }
 

@@ -12,8 +12,10 @@ abstract class BaseModel implements CrudInterface
 {
     use QueryBuilder;
 
+
     private $_connection;
 
+    protected $name = "BaseModel";
     private $_query;
 
     public function __construct()
@@ -21,9 +23,11 @@ abstract class BaseModel implements CrudInterface
         $this->_connection = new Database();
     }
 
+    abstract public function getAllWithPaginate(int $limit, int $offset);
+
     public function getAll()
     {
-        $this->_query = "SELECT * FROM $this->tableName ";
+        $this->_query = "SELECT * FROM $this->tableName";
 
         return $this;
     }
@@ -53,22 +57,79 @@ abstract class BaseModel implements CrudInterface
 
     public function limit(int $limit = 10)
     {
-        $stmt = $this->_connection->PDO()->prepare($this->_query);
+        $stmt   = $this->_connection->PDO()->prepare($this->_query);
         $result = $stmt->execute();
+
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-
-
-    public function create(array $data)
-    {
-
-    }
     public function update(int $id, array $data)
     {
     }
     public function remove(int $id): bool
     {
+        return true;
+    }
+
+ 
+
+    public function insertData($table, $data)
+    {
+
+        if (!empty($data)) {
+            
+            $fielStr  = '';
+            $valueStr = '';
+            foreach ($data as $key => $value) {
+                $fielStr .= $key . ',';
+                $valueStr .= "'" . $value . "',";
+            }
+
+            $fielStr  = rtrim($fielStr, ',');
+            $valueStr = rtrim($valueStr, ',');
+            $sql      = "INSERT INTO  $table($fielStr) VALUES ($valueStr)";
+         
+            $status = $this->query($sql);
+            if (!$status)
+                return false;
+        }
+        return true;
+    }
+
+    public function updateData($table, $data, $condition = '')
+    {
+        if (!empty($data)) {
+            $updateStr = '';
+            foreach ($data as $key => $value) {
+                if (strpos($value, ' ') !== false) {
+                    $updateStr .= "$key=$value,";
+                } else if ($value === '' || $value === null) {
+                    $updateStr .= "$key=NULL,";
+                } else {
+                    $updateStr .= "$key='$value',";
+                }
+            }
+            $updateStr = rtrim($updateStr, ',');
+            $sql       = "UPDATE $table SET $updateStr";
+            if (!empty($condition)) {
+                $sql = "UPDATE $table SET $updateStr WHERE $condition";
+            }
+            $status = $this->query($sql);
+            if (!$status)
+                return false;
+        }
+        return true;
+    }
+
+    public function deleteData($table, $condition = ''): bool
+    {
+        $sql = 'DELETE FROM ' . $table;
+        if (!empty($condition)) {
+            $sql = 'DELETE FROM ' . $table . ' WHERE ' . $condition;
+        }
+        $status = $this->query($sql);
+        if (!$status)
+            return false;
         return true;
     }
 
@@ -85,3 +146,4 @@ abstract class BaseModel implements CrudInterface
         }
     }
 }
+

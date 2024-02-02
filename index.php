@@ -3,10 +3,13 @@
 require_once "vendor\autoload.php";
 session_start();
 
-define("ROOT_URL", "http://127.0.0.1:5001");
+define("ROOT_URL", "http://127.0.0.1:5000");
 
 use App\Models\Database;
 use App\Models\UserModel;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
 // $user = new UserModel();
 // var_dump($user->checkUserExist('tinhpv10@fpt.edu.vn'));
@@ -18,3 +21,4 @@ use App\Core\Route;
 new Route;
 
 echo "<a href='?url=LoginController/logout'> Đăng xứt </a>";
+

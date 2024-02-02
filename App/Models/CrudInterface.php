@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+
+//injection constructor
 interface CrudInterface{
     
     /**
      * Phương thức getAll() dùng để lấy tất cả records
     */
     public function getAll();
-
     /**
      * Phương thức getOne() dùng để lấy một record
      * @param int $id
