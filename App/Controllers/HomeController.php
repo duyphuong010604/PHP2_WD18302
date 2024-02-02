@@ -27,9 +27,10 @@ class HomeController extends BaseController
 
     function homePage()
     {
-        // dữ liệu ở đây lấy từ responsitories hoặc model
+
         $data = [
         ];
+
         $this->_renderBase->renderHeader();
         $this->load->render('layouts/client/home', $data);
         $this->_renderBase->renderFooter();
@@ -37,10 +38,6 @@ class HomeController extends BaseController
 
 
 
-    function detail($id)
-    {
-        // dữ liệu ở đây lấy từ responsitories hoặc model
 
-    }
 
 }
