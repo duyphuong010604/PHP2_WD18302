@@ -28,12 +28,17 @@ class HomeController extends BaseController
     function homePage()
     {
 
-        $data = [
-        ];
 
-        $this->_renderBase->renderHeader();
-        $this->load->render('layouts/client/home', $data);
-        $this->_renderBase->renderFooter();
+        if (empty($_SESSION['employee'])) {
+            $this->load->render('layouts/pages/login');
+        } else {
+            $data = [
+            ];
+            $this->_renderBase->renderHeader();
+            $this->load->render('layouts/client/home', $data);
+            $this->_renderBase->renderFooter();
+        }
+
     }
 
 
