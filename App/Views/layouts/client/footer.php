@@ -18,21 +18,20 @@
         class="bi bi-arrow-up-short"></i></a>
 
 <!-- Vendor JS Files -->
-<script src="../../../public/client/assets/vendor/purecounter/purecounter_vanilla.js"></script>
-<script src="../../../public/client/assets/vendor/aos/aos.js"></script>
-<script src="../../../public/client/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../../../public/client/assets/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="../../../public/client/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="../../../public/client/assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="../../../public/client/assets/vendor/typed.js/typed.umd.js"></script>
-<script src="../../../public/client/assets/vendor/waypoints/noframework.waypoints.js"></script>
-<script src="../../../public/client/assets/vendor/php-email-form/validate.js"></script>
-
+<script src="../../../contents/client/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="../../../contents/client/assets/vendor/aos/aos.js"></script>
+<script src="../../../contents/client/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../../contents/client/assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="../../../contents/client/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="../../../contents/client/assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="../../../contents/client/assets/vendor/typed.js/typed.umd.js"></script>
+<script src="../../../contents/client/assets/vendor/waypoints/noframework.waypoints.js"></script>
+<script src="../../../contents/client/assets/vendor/php-email-form/validate.js"></script>
 
 <!-- Template Main JS File -->
-<script src="../../../public/client/assets/js/main.js"></script>
+<script src="../../../contents/client/assets/js/main.js"></script>
 
-<script src="../../../public/client/assets/js/time.js"></script>
+<script src="../../../contents/client/assets/js/time.js"></script>
 
 </body>
 

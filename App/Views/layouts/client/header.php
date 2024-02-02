@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="../../../public/client/assets/img/favicon.png" rel="icon">
-    <link href="../../../public/client/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="../../../contents/client/assets/img/favicon.png" rel="icon">
+    <link href="../../../contents/client/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -19,15 +19,15 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="../../../public/client/assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="../../../public/client/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../../public/client/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="../../../public/client/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="../../../public/client/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="../../../public/client/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="../../../contents/client/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../../../contents/client/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../contents/client/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../../contents/client/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../../../contents/client/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../../../contents/client/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="../../../public/client/assets/css/style.css" rel="stylesheet">
+    <link href="../../../contents/client/assets/css/style.css" rel="stylesheet">
 
     <!-- =======================================================
   * Template Name: iPortfolio
@@ -46,7 +46,7 @@
     <header id="header">
         <div class="d-flex flex-column">
             <div class="profile">
-                <img src="../../../public/client/assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+                <img src="../../../contents/client/assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
                 <h1 class="text-light"><a href="index.html">Alex Smith</a></h1>
                 <div class=" mt-3 text-center">
                     <p><a href="#info">Thông tin cá nhân</a></p>
