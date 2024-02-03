@@ -76,7 +76,8 @@
                             <span>Quản lý
                                 tài
                                 khoản</span></a></li>
-                    <li><a href="#contact" class="nav-link scrollto"><i class="bi bi-box-arrow-left"></i> <span>Đăng
+                    <li><a href="?url=LoginController/logout" class="nav-link scrollto"><i
+                                class="bi bi-box-arrow-left"></i> <span>Đăng
                                 xuất</span></a>
                     </li>
                 </ul>

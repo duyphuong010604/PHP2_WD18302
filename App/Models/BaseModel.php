@@ -15,7 +15,6 @@ abstract class BaseModel implements CrudInterface
 
     private $_connection;
 
-    protected $name = "BaseModel";
     private $_query;
 
     public function __construct()
@@ -34,6 +33,7 @@ abstract class BaseModel implements CrudInterface
     public function orderBy(string $order = 'ASC')
     {
         $this->_query = $this->_query . "order by " . $order;
+
         return $this;
     }
 
@@ -56,11 +56,13 @@ abstract class BaseModel implements CrudInterface
     {
         $stmt = $this->_connection->PDO()->prepare($this->_query);
         $result = $stmt->execute();
+
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function update(int $id, array $data)
+    public function update($id, $data, $condition = '')
     {
+
     }
     public function remove(int $id): bool
     {
@@ -71,7 +73,6 @@ abstract class BaseModel implements CrudInterface
 
     public function insertData($table, $data)
     {
-
         if (!empty($data)) {
             $fielStr = '';
             $valueStr = '';
@@ -79,6 +80,7 @@ abstract class BaseModel implements CrudInterface
                 $fielStr .= $key . ',';
                 $valueStr .= "'" . $value . "',";
             }
+
             $fielStr = rtrim($fielStr, ',');
             $valueStr = rtrim($valueStr, ',');
             $sql = "INSERT INTO  $table($fielStr) VALUES ($valueStr)";
@@ -90,14 +92,12 @@ abstract class BaseModel implements CrudInterface
         return true;
     }
 
-    public function updateData($table, $data, $condition = '')
+    public function updateData($id, $table, $data, $condition = '')
     {
         if (!empty($data)) {
             $updateStr = '';
             foreach ($data as $key => $value) {
-                if (strpos($value, ' ') !== false) {
-                    $updateStr .= "$key=$value,";
-                } else if ($value === '' || $value === null) {
+                if ($value === '' || $value === null) {
                     $updateStr .= "$key=NULL,";
                 } else {
                     $updateStr .= "$key='$value',";
@@ -106,7 +106,7 @@ abstract class BaseModel implements CrudInterface
             $updateStr = rtrim($updateStr, ',');
             $sql = "UPDATE $table SET $updateStr";
             if (!empty($condition)) {
-                $sql = "UPDATE $table SET $updateStr WHERE $condition";
+                $sql = "UPDATE $table SET $updateStr WHERE $condition = $id";
             }
             $status = $this->query($sql);
             if (!$status)

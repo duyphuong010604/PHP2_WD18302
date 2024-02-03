@@ -36,9 +36,84 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+    <style>
+        /* Thong bao Popup  */
+        .tbpopup .tboverlay {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+            display: none;
+        }
+
+        .tbpopup .tbcontent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: #fff;
+            max-width: 500px;
+            z-index: 2;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            font-family: "Open Sans", sans-serif;
+            border-radius: 20px;
+            display: block;
+            position: fixed;
+            box-shadow: 0px 0px 10px #111;
+        }
+
+        @media (max-width: 700px) {
+            .tbpopup .tbcontent {
+                width: 90%;
+            }
+        }
+
+        .tbpopup .tbclose-btn {
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 35px;
+            height: 35px;
+            color: #ff4444;
+            font-size: 30px;
+            font-weight: 600;
+            line-height: 35px;
+            text-align: center;
+            border-radius: 50%;
+        }
+
+        .tbpopup.active .tboverlay {
+            display: block;
+        }
+
+        .tbpopup.active .tbcontent {
+            transition: all 300ms ease-in-out;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .tbbuttom {
+            background: #00cc00;
+            color: #fff
+        }
+    </style>
 </head>
 
-<body>
+<body onload="
+<?php
+if (
+    isset($noErrors)
+) {
+    echo "thongbaopopup()";
+} else {
+    echo " ";
+}
+?>">
     <section class="vh-100" style="background-color: #ddd2d4;">
         <div class="container ">
             <div class="row d-flex justify-content-center align-items-center h-75">
@@ -46,50 +121,58 @@
                     <div class="card" style="border-radius: 1rem;">
                         <div class="row g-0">
                             <div class="col-md-6 col-lg-5 d-none d-md-block">
-                                <img src="../../../contents/client/assets/img/login/access-control-system-abstract-concept_335657-3180.avif"
-                                    alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;"
+                                <img src="../../../contents/client/assets/img/login/15.jpg" alt="login form"
+                                    class="img-fluid" style="border-radius: 1rem 0 0 1rem;"
                                     style="background-size: cover; background-position: center;" />
                             </div>
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
-                                    <form method="post" action="?url=LoginController/handleLogin">
+                                    <form method="post" action="?url=QuenmatkhauController/handleQmk">
                                         <div class="d-flex align-items-center mb-3 pb-1">
                                             <img src="../../../contents/admin/assets/img/Green White Simple Minimalist Retro Cafe Logo1.png"
                                                 alt="" class="me-4">
                                             <span class="h1 fw-bold mb-0">Adonas</span>
                                         </div>
-                                        <h5 class="fw-bold mb-3 pb-3" style="letter-spacing: 1px;">Đăng nhập tài
-                                            khoản</h5>
+                                        <h5 class="fw-bold mb-3 pb-3" style="letter-spacing: 1px;">Quên mật khẩu</h5>
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="username">Tên đăng nhập</label>
                                             <input type="text" id="username" name="username"
                                                 class="form-control form-control-lg" />
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="password">Password</label>
-                                            <input type="password" id="password" name="password"
+                                            <label class="form-label" for="email">Email của tài khoản</label>
+                                            <input type="email" id="email" name="email"
                                                 class="form-control form-control-lg" />
                                         </div>
                                         <div class="pt-1 mb-4">
-                                            <button class="btn btn-dark btn-lg btn-block" name="login" type="submit"
-                                                name='login'>Đăng
-                                                nhập</button>
+                                            <button class="btn btn-dark btn-lg btn-block" name="gui"
+                                                type="submit">Gửi</button>
                                             <p>
                                                 <?php
                                                 if (isset($empty))
                                                     echo "<span class='text-star' style='color: red;'>" . $empty . "</span>";
-                                                if (isset($length))
-                                                    echo "<span class='text-star' style='color: red;'>" . $length . "</span>";
+                                                if (isset($email))
+                                                    echo "<span class='text-star' style='color: red;'>" . $email . "</span>";
                                                 if (isset($noExit))
                                                     echo "<span class='text-star' style='color: red;'>" . $noExit . "</span>";
                                                 ?>
                                             </p>
-                                        </div>
-                                        <a class="small text-muted" href="?url=QuenmatkhauController/loadViewQmk">Quên
-                                            mật
-                                            khẩu?</a>
-                                    </form>
 
+                                            <!-- Thong bao pupup -->
+                                            <div class="tbpopup" id="tbpopup-1">
+                                                <div class="tboverlay"></div>
+                                                <div class="tbcontent">
+                                                    <div class="tbclose-btn" onclick="thongbaopopup()">&times;</div>
+                                                    <div style="font-size:30px;font-weight:bold">Thông báo</div>
+                                                    <p>Chúng tôi đã gửi cho bạn mật khẩu mới qua email của tài
+                                                        khoản, Vui lòng kiểm tra Email.</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <a class="small text-muted" href="?url=QuenmatkhauController/loadViewLogin">Đăng
+                                            nhập</a>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -113,7 +196,11 @@
 
     <!-- Template Main JS File -->
     <script src="../../../contents/client/assets/js/main.js"></script>
-
+    <script>
+        function thongbaopopup() {
+            document.getElementById("tbpopup-1").classList.toggle("active");
+        }
+    </script>
     <script src="../../../contents/client/assets/js/time.js"></script>
 
 
