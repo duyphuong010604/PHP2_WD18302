@@ -3,12 +3,14 @@
 namespace App\Controllers;
 
 use App\Core\RenderBase;
+use App\Controllers\LoginController;
 
 class HomeController extends BaseController
 {
 
-    private $_renderBase;
 
+    private $_renderBase;
+    public $login;
     /**
      * Thuốc trị đau lưng
      * Copy lại là hết đau lưng
@@ -28,9 +30,10 @@ class HomeController extends BaseController
     function homePage()
     {
 
-
         if (empty($_SESSION['employee'])) {
             $this->load->render('layouts/pages/login');
+            $this->login = new LoginController();
+            $this->login->loadViewLogin();
         } else {
             $data = [
             ];
@@ -38,7 +41,6 @@ class HomeController extends BaseController
             $this->load->render('layouts/client/home', $data);
             $this->_renderBase->renderFooter();
         }
-
     }
 
 

@@ -9,8 +9,6 @@ use PHPMailer\PHPMailer\Exception;
 
 class Mailer
 {
-
-
     protected $mail;
     public function __construct($email, $name, $passwordNew, $username)
     {

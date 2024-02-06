@@ -3,21 +3,19 @@ namespace App\Reponsitories;
 
 trait Validation
 {
-
     public $errors = array();
-    public function emptyValidation($data)
+    public function emptyValidation(string $data)
     {
         return !empty($data) ? true : false;
     }
 
-    public function lengthValidation(int $min, int $max, $data)
+    public function lengthValidation(int $min, int $max, string $data)
     {
         $length = 0;
         if ($this->emptyValidation($data)) {
             $length = strlen($data);
         }
         return ($length >= $min && $length <= $max) ? true : false;
-
     }
 
     public function emailValidation($data)

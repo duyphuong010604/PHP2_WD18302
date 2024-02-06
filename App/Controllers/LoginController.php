@@ -6,10 +6,12 @@ use App\Core\RenderBase;
 use App\Models\EmployeeModel;
 use App\Reponsitories\Validation;
 
+
 class LoginController extends BaseController
 {
 
     use Validation;
+    public $home;
 
     private $_renderBase;
 
@@ -57,6 +59,8 @@ class LoginController extends BaseController
                     $this->errors['noExit'] = 'Không tìm thấy tài khoản hoặc tên đăng nhập cùng với mật khẩu không hợp lệ!';
                     $this->load->render('layouts/pages/login', $this->errors);
                 } else {
+                    $this->home = new HomeController();
+                    $this->home->homePage();
                     $_SESSION['employee'] = $employee['username'];
                     $this->resetErrors();
                     $this->loadViewHome();
