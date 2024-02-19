@@ -31,7 +31,6 @@ class HomeController extends BaseController
     {
 
         if (empty($_SESSION['employee'])) {
-            $this->load->render('layouts/pages/login');
             $this->login = new LoginController();
             $this->login->loadViewLogin();
         } else {
